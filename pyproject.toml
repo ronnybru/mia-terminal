@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["ai_cmd"]
+
+[tool.setuptools.dynamic]
+version = {file = "VERSION.txt"}
+
+[project]
+name = "mia-terminal"
+dynamic = ["version"]
+description = "A CLI tool that converts natural language to shell commands using OpenAI's API"
+readme = "README.md"
+authors = [
+    {name = "Ronny Bruknapp", email = "ronny.bruknapp@digitaltrend.no"}
+]
+license = {text = "MIT"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+requires-python = ">=3.6"
+dependencies = [
+    "openai>=1.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/ronnybru/ai-cmd"
+Issues = "https://github.com/ronnybru/ai-cmd/issues"
+
+[project.scripts]
+mia = "ai_cmd.cli:main"

@@ -1,0 +1,7 @@
+include README.md
+include LICENSE
+include VERSION.txt
+include pyproject.toml
+include install.sh
+include install.bat
+recursive-include tests *
